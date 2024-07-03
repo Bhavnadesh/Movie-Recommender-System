@@ -1,0 +1,14 @@
+import pandas as pd
+import streamlit as st
+import pickle
+
+# Use the absolute path if necessary
+movies_dict = pickle.load(open('C:/Users/21410/PycharmProjects/Movie Recommender System/movies_dict.pkl', 'rb'))
+movies = pd.DataFrame(movies_dict)
+
+st.title('Movie Recommender System')
+
+option = st.selectbox(
+    "Which movie would you like to choose?",
+    movies['title'].values
+)
